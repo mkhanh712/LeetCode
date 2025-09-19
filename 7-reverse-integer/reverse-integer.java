@@ -6,8 +6,6 @@ class Solution {
         while(x != 0){
             int digit = x % 10; //lấy số cuối
             x = x / 10; //bỏ số cuối
-
-            //phải chia 10 vì reversed*10 sẽ tràn
             if (reversed < Integer.MIN_VALUE /10 || reversed > Integer.MAX_VALUE / 10){ 
                 return 0;
             }
