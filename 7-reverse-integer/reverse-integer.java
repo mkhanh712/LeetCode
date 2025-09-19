@@ -5,11 +5,11 @@ class Solution {
         int reversed = 0;
         while(x != 0){
             int digit = x % 10; //lấy số cuối
-            x = x / 10; //bỏ số cuối
             if (reversed < Integer.MIN_VALUE /10 || reversed > Integer.MAX_VALUE / 10){ 
                 return 0;
             }
             reversed = reversed * 10 + digit; // 3 -> 3*10 30+2 -> 32*10 320+1
+            x = x / 10; //bỏ số cuối
         }
         return reversed;
     }
