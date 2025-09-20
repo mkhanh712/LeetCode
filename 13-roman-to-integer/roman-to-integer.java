@@ -1,13 +1,30 @@
 class Solution {
+    // //trái->phải
+    // public int romanToInt(String s) {
+    //     int total = 0;
+    //     for (int i = 0; i < s.length(); i++){ 
+    //         int curr = value(s.charAt(i));
+    //         if(i + 1 < s.length() && curr < value(s.charAt(i+1))){ //số nhất luôn ở trái, vd MCM thì M xong tới C thì ko thể M tiếp nên nó là CM
+    //             total -= curr; // MCM, C < M nên -C sau đó +M 
+    //         } else{
+    //             total += curr; 
+    //         }
+    //     }
+    //     return total;
+    // }
+
+    //phải -> trái
     public int romanToInt(String s) {
         int total = 0;
-        for (int i = 0; i < s.length(); i++){ //trái -> phải
+        int prev = 0;
+        for (int i = s.length() - 1; i >= 0; i--){
             int curr = value(s.charAt(i));
-            if(i + 1 < s.length() && curr < value(s.charAt(i+1))){ //số nhất luôn ở trái, vd MCM thì M xong tới C thì ko thể M tiếp nên nó là CM
-                total -= curr; // MCM, C < M nên -C sau đó +M 
+            if(curr >= prev){  // vd MCMX, X -> M -> C vì duyệt từ phải qua trái thì càng tăng nhưng M lớn hơn C nên phải +M -C
+                total += curr;
             } else{
-                total += curr; 
+                total -= curr;
             }
+            prev = curr; //lưu lại giá trị trước đó
         }
         return total;
     }
