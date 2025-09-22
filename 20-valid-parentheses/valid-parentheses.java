@@ -10,10 +10,11 @@ class Solution {
                 if(stack.isEmpty()){ //nếu stack chưa có ngoặc mở thì trả về false
                     return false;
                 }
+                char last = stack.pop();
                 if(
-                    (c == ']' && stack.pop() != '[') ||
-                    (c == '}' && stack.pop() != '{') ||
-                    (c == ')' && stack.pop() != '(')
+                    (c == ']' && last != '[') ||
+                    (c == '}' && last != '{') ||
+                    (c == ')' && last != '(')
                 ){
                     return false;
                 }
