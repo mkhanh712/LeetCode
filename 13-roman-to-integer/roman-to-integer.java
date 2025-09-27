@@ -14,22 +14,22 @@ class Solution {
     // }
 
     //phải -> trái
-    public int romanToInt(String s) {
+    public int romanToInt(String s){
         int total = 0;
         int prev = 0;
-        for (int i = s.length() - 1; i >= 0; i--){
-            int curr = value(s.charAt(i));
-            if(curr >= prev){  // vd MCMX, X -> M -> C vì duyệt từ phải qua trái thì càng tăng nhưng M lớn hơn C nên phải +M -C
-                total += curr;
-            } else{
+        for(int i = s.length(); i > 0; i--){
+            int curr = value(s.charAt(i-1));
+            if(prev > curr){
                 total -= curr;
+            }else{
+                total += curr;
             }
-            prev = curr; //lưu lại giá trị trước đó
+            prev = curr;
         }
-        return total;
+        return total; 
     }
 
-    private int value(char c){
+    public int value(char c){
         switch(c){
             case 'I': return 1;
             case 'V': return 5;
