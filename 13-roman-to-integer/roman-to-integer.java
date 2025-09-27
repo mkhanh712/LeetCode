@@ -17,8 +17,8 @@ class Solution {
     public int romanToInt(String s){
         int total = 0;
         int prev = 0;
-        for(int i = s.length(); i > 0; i--){
-            int curr = value(s.charAt(i-1));
+        for(int i = s.length() - 1; i >= 0; i--){
+            int curr = value(s.charAt(i));
             if(prev > curr){
                 total -= curr;
             }else{
