@@ -1,33 +1,33 @@
 class Solution {
-    // //trái->phải
-    // public int romanToInt(String s) {
-    //     int total = 0;
-    //     for (int i = 0; i < s.length(); i++){ 
-    //         int curr = value(s.charAt(i));
-    //         if(i + 1 < s.length() && curr < value(s.charAt(i+1))){ //số nhất luôn ở trái, vd MCM thì M xong tới C thì ko thể M tiếp nên nó là CM
-    //             total -= curr; // MCM, C < M nên -C sau đó +M 
-    //         } else{
-    //             total += curr; 
-    //         }
-    //     }
-    //     return total;
-    // }
-
-    //phải -> trái
-    public int romanToInt(String s){
+    //trái->phải
+    public int romanToInt(String s) {
         int total = 0;
-        int prev = 0;
-        for(int i = s.length() - 1; i >= 0; i--){
+        for(int i = 0; i < s.length(); i++){
             int curr = value(s.charAt(i));
-            if(prev > curr){
+            if(i + 1 < s.length() && curr < value(s.charAt(i+1))){
                 total -= curr;
-            }else{
+            }else {
                 total += curr;
             }
-            prev = curr;
         }
-        return total; 
+        return total;
     }
+
+    // //phải -> trái
+    // public int romanToInt(String s){
+    //     int total = 0;
+    //     int prev = 0;
+    //     for(int i = s.length() - 1; i >= 0; i--){
+    //         int curr = value(s.charAt(i));
+    //         if(prev > curr){
+    //             total -= curr;
+    //         }else{
+    //             total += curr;
+    //         }
+    //         prev = curr;
+    //     }
+    //     return total; 
+    // }
 
     public int value(char c){
         switch(c){
