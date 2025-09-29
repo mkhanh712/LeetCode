@@ -1,7 +1,8 @@
 import java.util.Stack;
 
 class Solution {
-    public boolean isValid(String s) {
+   
+       public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
         for (char c : s.toCharArray()) { //dấu :(for-each duyệt từng phần tử) trong s, vd s = hello, print c = h e l l o
             if (c == '(' || c == '{' || c == '[') {  //ngoặc mở thì push vào
