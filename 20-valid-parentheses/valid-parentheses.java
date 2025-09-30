@@ -3,25 +3,23 @@ import java.util.Stack;
 class Solution {
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
-        for (char c : s.toCharArray()){
-            if (c == '(' || c == '{' || c == '['){
+        for(char c : s.toCharArray()){
+            if(c == '(' || c == '{' || c == '['){
                 stack.push(c);
-            }else {
+            }else{
                 if(stack.isEmpty()){
                     return false;
-                }         
-
-            int last = stack.pop();
-            if(
-                (c == ']' && last != '[') ||
-                (c == '}' && last != '{') ||
-                (c == ')' && last != '(')
-            ){
-                return false;
-            }
-    }
+                }
+                char last = stack.pop();
+                if(
+                    c == ')' && last != '(' ||
+                    c == '}' && last != '{' ||
+                    c == ']' && last != '['
+                ){
+                    return false;
+                }
+            }  
         }
-
-        return stack.isEmpty();      
+        return stack.isEmpty();
     }
 }
