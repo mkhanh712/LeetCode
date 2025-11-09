@@ -9,7 +9,7 @@ class Solution {
             reversed = reversed * 10 + digit; //121, rev= 1 x =12, rev=12 x=1
             x = x / 10;
         }
-        if (x == reversed / 10 || x == reversed){
+        if (x == reversed / 10 || x == reversed || x == 0){
             return true;
         }else{
             return false;
