@@ -28,7 +28,6 @@ class Solution {
     //     }
     //     return total; 
     // }
-
     public int value(char c){
         switch(c){
             case 'I': return 1;
