@@ -13,6 +13,6 @@ class Solution {
         // if (min == Integer.MAX_VALUE){
         //     return 0;
         // }
-        return min == Integer.MAX_VALUE ? 0 : min;
+        return min == Integer.MAX_VALUE ? 0 : min;// neu min == maxvlue thi tra ve 0 (do ko đủ số = target), else trả về min
     }
 }
