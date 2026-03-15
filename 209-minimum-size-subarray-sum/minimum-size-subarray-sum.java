@@ -1,18 +1,15 @@
 class Solution {
     public int minSubArrayLen(int target, int[] nums) {
-        int sum = 0;
         int min = Integer.MAX_VALUE;
-        for(int l = 0, r = 0; r < nums.length; r++) {
+        int sum = 0;
+        for(int l = 0, r = 0; r < nums.length; r++){
             sum += nums[r];
-            while (sum >= target) {
-                min = Math.min(min, r - l + 1);
+            while(sum >= target){
                 sum -= nums[l];
+                min = Math.min(min, r - l + 1);
                 l++;
             }
         }
-        // if (min == Integer.MAX_VALUE){
-        //     return 0;
-        // }
-        return min == Integer.MAX_VALUE ? 0 : min;// neu min == maxvlue thi tra ve 0 (do ko đủ số = target), else trả về min
+        return min == Integer.MAX_VALUE ? 0 : min;
     }
 }
