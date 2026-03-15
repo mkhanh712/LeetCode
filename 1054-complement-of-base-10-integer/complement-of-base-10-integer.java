@@ -12,7 +12,6 @@ class Solution {
         // }
         // int tempInt;
         // return tempInt = Integer.parseInt(temp.toString(), 2);
-
         return n == 0 ? 1 : n ^ ((Integer.highestOneBit(n) << 1) -1);
     }
 }
