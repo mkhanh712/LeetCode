@@ -5,10 +5,12 @@ class Solution {
         // 1000 - 1(0001) = 0111(0 trừ 1 ko đc nên mượn bit bên trái tới khi gặp 1 nên các bit giữa thành 1) = 111 (0 ko tính)
         // ^ là phép XOR, 0 ^ 0 = 1, 1 ^ 0 hay 0 ^ 1 = 1, 1 ^ 1 = 0
         // các phép xor, << và - 1 đều được thực hiện bằng bit (phía bên trong) nhưng return thì nó tự chuyển bit sau calc thành int 
-        if (n == 0){
-            return 1;
-        }else{
-            return n ^ ((Integer.highestOneBit(n) << 1) - 1);
+        StringBuilder temp = new StringBuilder();
+        String binary = Integer.toBinaryString(n);
+        for(int i = 0; i < binary.length(); i++){
+            temp.append(binary.charAt(i) == '0' ? '1' : '0');
         }
+        int tempInt;
+        return tempInt = Integer.parseInt(temp.toString(), 2);
     }
 }
